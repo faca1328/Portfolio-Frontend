@@ -3,7 +3,7 @@ import { themeStore } from "../../store/themeStore"
 
 export const DarkModeIcon = () => {
 
-    const { theme , setTheme} = themeStore((state:string) => state)
+    const { theme , setTheme} = themeStore()
     const themeModeL = theme === 'light' ? 'bg-black/20' : '';
 
     useEffect(() => {

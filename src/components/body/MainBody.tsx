@@ -18,7 +18,7 @@ import { languageStore } from "../../store/languageStore"
 
 
 export const MainBody = () => {
-  const { language } = languageStore((state: string) => state)
+  const { language } = languageStore() 
   const langMode = language === "es" ? true : false;
 
   const [showArrow, setShowArrow] = useState(false);

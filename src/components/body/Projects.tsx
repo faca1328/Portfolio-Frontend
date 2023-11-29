@@ -16,15 +16,23 @@ import reactIcon from "../../../utils/icons8-reaccionar.svg"
 import reduxIcon from "../../../utils/icons8-redux.svg"
 import { languageStore } from "../../store/languageStore"
 import { Icons } from "./Icons"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export const Projects = ({ id = "projects" }) => {
   const [portfolio, setPortfolio] = useState(true)
   const pTrue = portfolio ? 'bg-black/30' : '';
   const pFalse = portfolio ? '' : 'bg-black/30';
 
-  const { language } = languageStore((state: string) => state)
+  const { language } = languageStore()
   const langMode = language === "es" ? true : false;
+
+
+  const video1 = useRef<HTMLVideoElement>(null);
+  const video2 = useRef<HTMLVideoElement>(null);
+  const video3 = useRef<HTMLVideoElement>(null);
+  const video4 = useRef<HTMLVideoElement>(null);
+  const video5 = useRef<HTMLVideoElement>(null);
+  const video6 = useRef<HTMLVideoElement>(null);
 
   return (
     <div className="flex w-screen bg-zinc-800 text-white flex-col h-full items-center pt-10 " id={id}>
@@ -56,10 +64,10 @@ export const Projects = ({ id = "projects" }) => {
 
           <div className="inline-flex bg-zinc-700/30 px-5 rounded-xl my-10 gap-10 flex-wrap max-w-[85%] items-center pb-5 justify-evenly">
             <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-orange-400/50 max-phone:w-fit"
-              onMouseEnter={() => video1?.play()}
-              onMouseLeave={() => video1?.pause()}
+              onMouseEnter={() => video1.current?.play()}
+              onMouseLeave={() => video1.current?.pause()}
             >
-              <video src={spotyVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video1" loop></video>
+              <video src={spotyVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video1} loop></video>
               <div className="text-center text-amber-50 font-medium">
                 <p>
                   {langMode ?
@@ -95,10 +103,10 @@ export const Projects = ({ id = "projects" }) => {
             </div>
 
             <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-orange-400/50 max-phone:w-fit"
-              onMouseEnter={() => video2?.play()}
-              onMouseLeave={() => video2?.pause()}
+              onMouseEnter={() => video2.current?.play()}
+              onMouseLeave={() => video2.current?.pause()}
             >
-              <video src={netflixVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video2" loop></video>
+              <video src={netflixVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video2} loop></video>
               <div className="text-center text-amber-50 font-medium">
                 <p>
                   {langMode ?
@@ -134,10 +142,10 @@ export const Projects = ({ id = "projects" }) => {
             </div>
 
             <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-orange-400/50 max-phone:w-fit"
-              onMouseEnter={() => video3?.play()}
-              onMouseLeave={() => video3?.pause()}
+              onMouseEnter={() => video3.current?.play()}
+              onMouseLeave={() => video3.current?.pause()}
             >
-              <video src={todoVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video3" loop></video>
+              <video src={todoVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video3} loop></video>
               <div className="text-center text-amber-50 font-medium">
                 <p>
                   {langMode ?
@@ -177,10 +185,10 @@ export const Projects = ({ id = "projects" }) => {
 
             <div className="inline-flex bg-zinc-700/30 px-5 rounded-xl my-10 gap-10 flex-wrap max-w-[85%] items-center pb-5 justify-evenly">
               <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/50 max-phone:w-fit"
-                onMouseEnter={() => video4?.play()}
-                onMouseLeave={() => video4?.pause()}
+                onMouseEnter={() => video4.current?.play()}
+                onMouseLeave={() => video4.current?.pause()}
               >
-                <video src={shopVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video4" loop></video>
+                <video src={shopVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video4} loop></video>
                 <div className="text-center text-cyan-50 font-medium ">
                   <p>
                     {langMode ?
@@ -215,10 +223,10 @@ export const Projects = ({ id = "projects" }) => {
               </div>
 
               <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/50 max-phone:w-fit"
-                onMouseEnter={() => video5?.play()}
-                onMouseLeave={() => video5?.pause()}
+                onMouseEnter={() => video5.current?.play()}
+                onMouseLeave={() => video5.current?.pause()}
               >
-                <video src={dataVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video5" loop></video>
+                <video src={dataVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video5} loop></video>
                 <div className="text-center text-cyan-50 font-medium">
                   <p>
                   {langMode ?
@@ -254,10 +262,10 @@ export const Projects = ({ id = "projects" }) => {
               </div>
 
               <div className="w-[30rem]  mt-5 bg-black/30 rounded-lg shadow-md p-1 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/50 max-phone:w-fit"
-                onMouseEnter={() => video6?.play()}
-                onMouseLeave={() => video6?.pause()}
+                onMouseEnter={() => video6.current?.play()}
+                onMouseLeave={() => video6.current?.pause()}
               >
-                <video src={userVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted id="video6" loop></video>
+                <video src={userVideo} className="w-full h-auto rounded-md mb-4 max-phone:w-[85%]" muted ref={video6} loop></video>
                 <div className="text-center text-cyan-50 font-medium">
                   <p>
                   {langMode ?

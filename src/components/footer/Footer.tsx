@@ -2,7 +2,7 @@ import gitIcon from "../../../utils/icons8-github.svg"
 import { languageStore } from "../../store/languageStore"
 
 export const Footer = () => {
-    const { language } = languageStore((state: string) => state)
+    const { language } = languageStore()
     const langMode = language === "es" ? true : false;
 
     return (

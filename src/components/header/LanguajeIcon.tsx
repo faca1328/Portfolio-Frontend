@@ -5,7 +5,7 @@ import { languageStore} from "../../store/languageStore"
 
 export const LanguajeIcon = () => {
 
-  const {language, setLanguage} = languageStore((state:string) => state)
+  const {language, setLanguage} = languageStore()
   const languageModeES = language === 'es' ? 'bg-black/20 dark:bg-white/20' : '';
   const languageModeEN = language === 'en' ? 'bg-black/20 dark:bg-white/20' : '';
 

@@ -4,10 +4,10 @@ import { themeStore } from "../../store/themeStore"
 import { languageStore } from "../../store/languageStore"
 
 export const NavBar = () => {
-    const { language } = languageStore((state: string) => state)
+    const { language } = languageStore()
     const langMode = language === "es" ? true : false;
 
-    const { theme } = themeStore((state: string) => state)
+    const { theme } = themeStore()
     const themeMode = theme === 'light' ? 'logo-gradient-light' : 'logo-gradient-dark';
 
 
